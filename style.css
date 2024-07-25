@@ -486,6 +486,8 @@ footer .col {
 
 footer .logo {
     margin-bottom: 30px;
+    width: 100px;
+    height:100px;
 }
 
 footer h4 {
