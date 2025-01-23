@@ -57,6 +57,12 @@ export default function Navbar() {
               </Link>
             )}
 
+            {user && (
+              <Link to="/orders" className="text-gray-600 hover:text-gray-900">
+                My Orders
+              </Link>
+            )}
+
             <Link to="/cart" className="relative">
               <ShoppingCart className="h-6 w-6 text-gray-600" />
               {itemCount > 0 && (
