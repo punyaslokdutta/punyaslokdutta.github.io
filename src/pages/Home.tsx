@@ -58,7 +58,7 @@ export default function Home() {
           <Link to="/products" className="group">
             <div className="relative rounded-lg overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1582788186835-c5b7c2c0bff2?w=800"
+                src="https://csjfsnydryvuuqmiawqy.supabase.co/storage/v1/object/public/Petproducts/protein_powder.jpg?t=2025-01-23T17%3A36%3A44.655Z"
                 alt="Supplements"
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
               />
@@ -70,8 +70,8 @@ export default function Home() {
           <Link to="/products" className="group">
             <div className="relative rounded-lg overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1585766765952-b26936e5bdb5?w=800"
-                alt="Accessories"
+                src="https://csjfsnydryvuuqmiawqy.supabase.co/storage/v1/object/public/Petproducts/Lintroller.jpg?t=2025-01-23T17%3A42%3A20.402Z"
+                alt="Grooming"
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
               />
               <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
@@ -82,7 +82,7 @@ export default function Home() {
           <Link to="/products" className="group">
             <div className="relative rounded-lg overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1615502731978-f8ac9f13e2eb?w=800"
+                src="https://csjfsnydryvuuqmiawqy.supabase.co/storage/v1/object/public/Petproducts/Multivitamin_Dog_Chewable.jpg?t=2025-01-23T17%3A44%3A38.564Z"
                 alt="Chewables"
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
               />
