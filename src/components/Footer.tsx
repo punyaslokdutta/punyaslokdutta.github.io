@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-50 border-t mt-16">
       <div className="max-w-7xl mx-auto py-6 px-4 text-center text-gray-600 text-sm">
-        © 2025 Kraft Island All rights reserved. | FSSAI License No: XXXXXXXXXX
+        © 2025 Kraft Island All rights reserved. | FSSAI License No: 30250113118776174
       </div>
     </footer>
   );

@@ -50,8 +50,13 @@ const Orders = () => {
           <div key={order.id} className="border rounded-lg p-4 shadow-sm">
             <div className="flex justify-between items-center mb-2">
               <span className="font-semibold">Order #{order.id}</span>
-              <span className="text-gray-600">{new Date(order.created_at).toLocaleDateString()}</span>
-            </div>
+              <span className="text-gray-600">
+                {new Date(order.created_at).toLocaleString('en-IN', {
+                  timeZone: 'Asia/Kolkata',
+                  dateStyle: 'medium',
+                  timeStyle: 'short'
+                })}
+              </span>            </div>
             <div className="text-gray-600">Status: {order.status}</div>
             <div className="mt-2">Total: {order.total_amount} ₹</div>
           </div>
