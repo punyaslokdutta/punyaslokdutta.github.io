@@ -10,6 +10,7 @@ import Auth from './pages/Auth';
 import Orders from './pages/Orders';
 import Footer from './components/Footer';
 import ProductDetail from './pages/ProductDetail';
+import WhatsAppButton from './components/WhatsAppButton';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         </main>
         <Footer />
         <Toaster position="bottom-right" />
+        <WhatsAppButton />
       </div>
     </BrowserRouter>
   );
