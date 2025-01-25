@@ -1,28 +1,85 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ShoppingBag, Shield, Truck } from 'lucide-react';
 
+const SLIDER_IMAGES = [
+  {
+    url: 'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=1600',
+    title: "Your Pet's Health, Our Priority",
+    description: "Discover our premium collection of pet care essentials. From rustic comfort to modern luxury, give your pets the style they deserve."
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=1600',
+    title: "Quality Products for Happy Pets",
+    description: "Explore our carefully curated selection of premium pet supplies and accessories."
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=1600',
+    title: "Natural & Organic Options",
+    description: "Choose from our range of natural and organic products for your pet's wellbeing."
+  }
+];
+
 export default function Home() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % SLIDER_IMAGES.length);
+    }, 5000); // Change slide every 5 seconds
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <div className="space-y-16">
       {/* Hero Section */}
-      <div className="relative bg-neutral-900 text-white rounded-2xl overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=1600')] bg-cover bg-center opacity-30"></div>
-        <div className="relative max-w-4xl mx-auto px-4 py-16 sm:px-6 sm:py-24 lg:py-32">
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-            Your Pet's Health, Our Priority
-          </h1>
-          <p className="mt-6 text-xl max-w-2xl">
-            Discover our premium western-inspired collection of pet care essentials. 
-            From rustic comfort to modern luxury, give your pets the style they deserve.
-          </p>
-          <div className="mt-10">
-            <Link
-              to="/products"
-              className="inline-block bg-white text-neutral-900 px-8 py-3 rounded-none font-semibold hover:bg-gray-100 transition-colors"
+      <div className="container mx-auto px-4 py-4">
+        <div className="relative bg-neutral-900 text-white rounded-2xl overflow-hidden h-[600px]">
+          {SLIDER_IMAGES.map((slide, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                currentSlide === index ? 'opacity-100' : 'opacity-0'
+              }`}
             >
-              Shop now
-            </Link>
+              <div 
+                className="absolute inset-0 bg-cover bg-center opacity-30 transition-transform duration-1000 scale-105"
+                style={{ backgroundImage: `url('${slide.url}')` }}
+              />
+              <div className="relative max-w-4xl mx-auto px-4 py-16 sm:px-6 sm:py-24 lg:py-32">
+                <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl font-aboreto">
+                  {slide.title}
+                </h1>
+                <p className="mt-6 text-xl max-w-2xl font-aboreto">
+                  {slide.description}
+                </p>
+                <div className="mt-10">
+                  <Link
+                    to="/products"
+                    className="inline-block bg-white text-neutral-900 px-8 py-3 rounded-none font-aboreto hover:bg-gray-100 transition-colors"
+                  >
+                    Shop now
+                  </Link>
+                </div>
+              </div>
+            </div>
+          ))}
+
+          {/* Slide indicators */}
+          <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2">
+            {SLIDER_IMAGES.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`w-2 h-2 rounded-full transition-all ${
+                  currentSlide === index 
+                    ? 'bg-white w-4' 
+                    : 'bg-white/50 hover:bg-white/75'
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
@@ -11,8 +11,11 @@ import Orders from './pages/Orders';
 import Footer from './components/Footer';
 import ProductDetail from './pages/ProductDetail';
 import WhatsAppButton from './components/WhatsAppButton';
+import { supabase } from './lib/supabase';
+import Profile from './pages/Profile';
 
 function App() {
+
   return (
     <BrowserRouter>
       <div className="min-h-screen bg-gray-50">
@@ -26,6 +29,11 @@ function App() {
             <Route path="/admin" element={<AdminConsole />} />
             <Route path="/auth" element={<Auth />} />
             <Route path="/products/:id" element={<ProductDetail/>} />
+            <Route path="/profile" element={
+          <PrivateRoute>
+            <Profile />
+          </PrivateRoute>
+        } />
           </Routes>
         </main>
         <Footer />
@@ -34,6 +42,22 @@ function App() {
       </div>
     </BrowserRouter>
   );
+}
+
+function PrivateRoute({ children }: { children: React.ReactNode }) {
+  const [user, setUser] = useState<any>(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      if (!session) {
+        navigate('/auth');
+      }
+      setUser(session?.user ?? null);
+    });
+  }, [navigate]);
+
+  return user ? <>{children}</> : null;
 }
 
 export default App;
