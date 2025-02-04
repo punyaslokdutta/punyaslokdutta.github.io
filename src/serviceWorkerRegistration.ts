@@ -10,21 +10,14 @@ type Config = {
 };
 
 export function register(config?: Config) {
-  if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
-    const publicUrl = new URL(process.env.PUBLIC_URL, window.location.href);
-    if (publicUrl.origin !== window.location.origin) {
-      return;
+  if ('serviceWorker' in navigator) {
+    const swUrl = `/service-worker.js`;
+
+    if (isLocalhost) {
+      checkValidServiceWorker(swUrl, config);
+    } else {
+      registerValidSW(swUrl, config);
     }
-
-    window.addEventListener('load', () => {
-      const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
-
-      if (isLocalhost) {
-        checkValidServiceWorker(swUrl, config);
-      } else {
-        registerValidSW(swUrl, config);
-      }
-    });
   }
 }
 
