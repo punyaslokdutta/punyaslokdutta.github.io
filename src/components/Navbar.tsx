@@ -111,7 +111,7 @@ export default function Navbar() {
         {/* Categories */}
         <div className="flex justify-center space-x-8 mt-6 font-aboreto text-sm">
           <Link to="/category/food" className="hover:underline">Supplements</Link>
-          <Link to="/category/toys" className="hover:underline">Chews</Link>
+          <Link to="/category/chews" className="hover:underline">Chews</Link>
           <Link to="/category/accessories" className="hover:underline">Accessories</Link>
           {isAdmin && (
             <Link to="/admin" className="hover:underline text-red-600">

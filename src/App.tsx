@@ -13,6 +13,7 @@ import ProductDetail from './pages/ProductDetail';
 import WhatsAppButton from './components/WhatsAppButton';
 import { supabase } from './lib/supabase';
 import Profile from './pages/Profile';
+import Chews from './pages/Chews';
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
             <Profile />
           </PrivateRoute>
         } />
+            <Route path="/category/chews" element={<Chews />} />
           </Routes>
         </main>
         <Footer />
