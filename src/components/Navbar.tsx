@@ -60,7 +60,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link to="/" className="text-2xl font-bold text-neutral-900 font-aboreto">
-            Pawsitive Nutrition
+            Sunday For Paws
           </Link>
 
           {/* Right side icons */}
