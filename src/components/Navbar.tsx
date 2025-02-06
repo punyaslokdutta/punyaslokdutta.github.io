@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useCartStore } from '../store/cart';
 import { supabase } from '../lib/supabase';
 
-export default function Navbar() {
+interface NavbarProps {
+  onChatOpen: () => void;
+}
+
+export default function Navbar({ onChatOpen }: NavbarProps) {
   const [user, setUser] = React.useState(null);
   const [isAdmin, setIsAdmin] = React.useState(false);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const items = useCartStore((state) => state.items);
   const itemCount = items.reduce((sum, item) => sum + item.quantity, 0);
 
@@ -62,6 +67,34 @@ export default function Navbar() {
           <Link to="/" className="text-2xl font-bold text-neutral-900 font-aboreto">
             Sunday For Paws
           </Link>
+
+          {/* Expert Chat Button */}
+          <button 
+            onClick={onChatOpen}
+            className="flex items-center gap-4 hover:opacity-80 transition-opacity"
+          >
+            <div className="flex -space-x-2">
+              <img 
+                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=50&h=50&fit=crop"
+                alt=""
+                className="w-8 h-8 rounded-full border-2 border-white" 
+              />
+              <img
+                src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=50&h=50&fit=crop" 
+                alt=""
+                className="w-8 h-8 rounded-full border-2 border-white"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=50&h=50&fit=crop"
+                alt="" 
+                className="w-8 h-8 rounded-full border-2 border-white"
+              />
+            </div>
+            <div className="flex items-center gap-2 text-sm font-aboreto text-neutral-600">
+              <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+              Talk to our experts
+            </div>
+          </button>
 
           {/* Right side icons */}
           <div className="flex items-center space-x-6">

@@ -14,13 +14,15 @@ import WhatsAppButton from './components/WhatsAppButton';
 import { supabase } from './lib/supabase';
 import Profile from './pages/Profile';
 import Chews from './pages/Chews';
+import ChatDrawer from './components/ChatDrawer';
 
 function App() {
+  const [isChatOpen, setIsChatOpen] = useState(false);
 
   return (
     <BrowserRouter>
       <div className="min-h-screen bg-gray-50">
-        <Navbar />
+        <Navbar onChatOpen={() => setIsChatOpen(true)} />
         <main className="container mx-auto px-4 py-8">
           <Routes>
             <Route path="/" element={<Home />} />
@@ -41,6 +43,10 @@ function App() {
         <Footer />
         <Toaster position="bottom-right" />
         <WhatsAppButton />
+        <ChatDrawer 
+          isOpen={isChatOpen} 
+          onClose={() => setIsChatOpen(false)} 
+        />
       </div>
     </BrowserRouter>
   );
