@@ -46,7 +46,7 @@ export default function Waitlist({ serviceName, serviceId, onClose }: WaitlistPr
 
   if (success) {
     return (
-      <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
+      <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
         <div className="bg-[#1C1C1C] rounded-lg p-8 max-w-[48rem] w-full text-center">
           <div className="mb-6">
             <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto">
@@ -77,7 +77,7 @@ export default function Waitlist({ serviceName, serviceId, onClose }: WaitlistPr
   }
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
       <div className="bg-black rounded-lg p-8 max-w-[48rem] w-full">
         <div className="text-center mb-8">
           <h2 className="text-2xl font-bold text-white mb-2">Join the waitlist for</h2>
