@@ -21,7 +21,7 @@ export default function Products() {
     const { data, error } = await supabase
       .from('products')
       .select('*')
-      .order('created_at', { ascending: false });
+      .order('created_at', { ascending: true });
 
     if (error) {
       toast.error('Failed to load products');

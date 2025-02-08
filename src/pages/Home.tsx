@@ -64,7 +64,7 @@ export default function Home() {
                     to="/products"
                     className="inline-block bg-white text-neutral-900 px-8 py-3 rounded-none font-aboreto hover:bg-gray-100 transition-colors"
                   >
-                    Shop now
+                    Request early access
                   </Link>
                 </div>
               </div>

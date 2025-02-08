@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Waitlist from './Waitlist';
 
 interface ProductCardProps {
   id: string;
@@ -7,37 +8,39 @@ interface ProductCardProps {
   price: number;
   image: string;
   brand?: string;
+  isService?: boolean;
   // ... other props
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ id, name, price, image, brand }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ id, name, price, image, brand, isService = true }) => {
+  const [showWaitlist, setShowWaitlist] = useState(false);
+
   return (
-    <Link
-      to={`/products/${id}`}
-      className="group block bg-white hover:bg-neutral-50 transition-all duration-300"
-    >
-      <div className="relative overflow-hidden">
-        <img
-          src={image}
-          alt={name}
-          className="w-full h-[400px] object-cover object-center transform transition-transform duration-700 group-hover:scale-105"
+    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <img src={image} alt={name} className="w-full h-48 object-cover" />
+      <div className="p-4">
+        <h3 className="text-lg font-semibold text-gray-900">{name}</h3>
+        
+        {isService ? (
+          <button
+            onClick={() => setShowWaitlist(true)}
+            className="mt-2 w-full bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+          >
+            Join Waitlist
+          </button>
+        ) : (
+          <p className="mt-2 text-gray-600">₹{price.toLocaleString('en-IN')}.00</p>
+        )}
+      </div>
+
+      {showWaitlist && (
+        <Waitlist
+          serviceId={id}
+          serviceName={name}
+          onClose={() => setShowWaitlist(false)}
         />
-        {/* Optional hover overlay */}
-        <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-5 transition-opacity duration-300" />
-      </div>
-      
-      <div className="p-6 text-center">
-        <h3 className="text-xs uppercase tracking-wider text-neutral-500 font-aboreto mb-2">
-          {brand || 'PAWSITIVE NUTRITION'}
-        </h3>
-        <h2 className="text-sm font-aboreto mb-2">
-          {name}
-        </h2>
-        <p className="text-sm font-aboreto text-neutral-900">
-          ₹{price.toLocaleString('en-IN')}.00
-        </p>
-      </div>
-    </Link>
+      )}
+    </div>
   );
 };
 
