@@ -21,7 +21,7 @@ export default function Products() {
     const { data, error } = await supabase
       .from('products')
       .select('*')
-      .order('created_at', { ascending: false });
+      .order('created_at', { ascending: true });
 
     if (error) {
       toast.error('Failed to load products');
@@ -47,14 +47,16 @@ export default function Products() {
   return (
     <div className="container mx-auto px-4">
       <h1 className="text-3xl font-bold text-gray-900 mb-8">Our Products</h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {products.map((product) => (
           <ProductCard
             key={product.id}
             id={product.id}
             name={product.name}
+            description={product.description}
             price={product.price}
             image={product.image_url || 'https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=800'}
+            isService={product.is_service}
           />
         ))}
       </div>
