@@ -12,13 +12,62 @@ interface WaitlistProps {
 export default function Waitlist({ serviceName, serviceId, onClose }: WaitlistProps) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [emailError, setEmailError] = useState('');
   const [mobile, setMobile] = useState('');
+  const [mobileError, setMobileError] = useState('');
   const [petType, setPetType] = useState('');
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 
+  const validateEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setEmailError('Please enter a valid email address');
+      return false;
+    }
+    setEmailError('');
+    return true;
+  };
+
+  const validateMobile = (mobile: string) => {
+    if (mobile && mobile.length > 0) {
+      const mobileRegex = /^[6-9]\d{9}$/;
+      if (!mobileRegex.test(mobile)) {
+        setMobileError('Please enter a valid 10-digit Indian mobile number');
+        return false;
+      }
+    }
+    setMobileError('');
+    return true;
+  };
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setEmail(value);
+    if (value) validateEmail(value);
+    else setEmailError('');
+  };
+
+  const handleMobileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    // Only allow numbers
+    if (value && !/^\d*$/.test(value)) return;
+    setMobile(value);
+    if (value) validateMobile(value);
+    else setMobileError('');
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate both fields before submission
+    const isEmailValid = validateEmail(email);
+    const isMobileValid = validateMobile(mobile);
+
+    if (!isEmailValid || !isMobileValid) {
+      return;
+    }
+
     setLoading(true);
 
     try {
@@ -102,19 +151,30 @@ export default function Waitlist({ serviceName, serviceId, onClose }: WaitlistPr
               type="email"
               placeholder="Email"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={handleEmailChange}
               required
-              className="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-700 focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+              className={`w-full p-3 rounded-lg bg-gray-800 text-white border ${
+                emailError ? 'border-red-500' : 'border-gray-700'
+              } focus:border-blue-500 focus:ring-1 focus:ring-blue-500`}
             />
+            {emailError && (
+              <p className="mt-1 text-sm text-red-500">{emailError}</p>
+            )}
           </div>
           <div>
             <input
               type="tel"
               placeholder="Want early access via WhatsApp? Share your number (optional, no spam!)."
               value={mobile}
-              onChange={(e) => setMobile(e.target.value)}
-              className="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-700 focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+              onChange={handleMobileChange}
+              maxLength={10}
+              className={`w-full p-3 rounded-lg bg-gray-800 text-white border ${
+                mobileError ? 'border-red-500' : 'border-gray-700'
+              } focus:border-blue-500 focus:ring-1 focus:ring-blue-500`}
             />
+            {mobileError && (
+              <p className="mt-1 text-sm text-red-500">{mobileError}</p>
+            )}
           </div>
           <div>
             <select
@@ -131,8 +191,8 @@ export default function Waitlist({ serviceName, serviceId, onClose }: WaitlistPr
           </div>
           <button
             type="submit"
-            disabled={loading}
-            className="w-full bg-gray-800 text-white p-3 rounded-lg hover:bg-gray-700 flex items-center justify-center space-x-2"
+            disabled={loading || !!emailError || !!mobileError}
+            className="w-full bg-gray-800 text-white p-3 rounded-lg hover:bg-gray-700 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {loading ? 'Joining...' : 'Join the waitlist'}
             <span className="ml-2">→</span>
