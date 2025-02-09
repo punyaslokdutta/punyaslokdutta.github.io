@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
-import Products from './pages/Products';
 import Cart from './pages/Cart';
 import AdminConsole from './pages/AdminConsole';
 import Auth from './pages/Auth';
@@ -21,22 +20,21 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-gray-50 font-nunito">
         <Navbar onChatOpen={() => setIsChatOpen(true)} />
-        <main className="container mx-auto px-4 py-8">
+        <main className="w-full">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/products" element={<Products />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/orders" element={<Orders />} />
             <Route path="/admin" element={<AdminConsole />} />
             <Route path="/auth" element={<Auth />} />
             <Route path="/products/:id" element={<ProductDetail/>} />
             <Route path="/profile" element={
-          <PrivateRoute>
-            <Profile />
-          </PrivateRoute>
-        } />
+              <PrivateRoute>
+                <Profile />
+              </PrivateRoute>
+            } />
             <Route path="/category/chews" element={<Chews />} />
           </Routes>
         </main>

@@ -14,11 +14,28 @@ export default function ProductCard({ id, name, description, price, image, isSer
   const [showWaitlist, setShowWaitlist] = useState(false);
 
   return (
-    <div className="bg-white rounded-3xl shadow-sm hover:shadow-md transition-shadow overflow-hidden">
-      <div className="relative">
+    <div className="bg-white rounded-3xl p-8 hover:shadow-lg transition-shadow duration-300">
+      <div className="flex flex-col md:flex-row items-start gap-8">
+        {/* Left Content */}
+        <div className="flex-1 space-y-4">
+          <h3 className="text-4xl font-bold text-gray-900">{name}</h3>
+          {description && (
+            <p className="text-xl text-gray-500 leading-relaxed">
+              {description}
+            </p>
+          )}
+          <button
+            onClick={() => setShowWaitlist(true)}
+            className="mt-6 px-8 py-3 bg-white text-gray-900 border-2 border-gray-200 rounded-full text-lg font-medium hover:border-teal-600 hover:text-teal-600 transition-colors duration-300"
+          >
+            Join Waitlist
+          </button>
+        </div>
+
+        {/* Right Image */}
         {image && (
-          <div className="w-full h-64 bg-[#F5F5DC] relative">
-            <div className="absolute inset-0 rounded-bl-[100px]">
+          <div className="flex-1">
+            <div className="relative w-full aspect-square rounded-3xl overflow-hidden bg-[#EEF3FF]"> {/* Light blue background */}
               <img 
                 src={image} 
                 alt={name}
@@ -27,23 +44,6 @@ export default function ProductCard({ id, name, description, price, image, isSer
             </div>
           </div>
         )}
-      </div>
-
-      <div className="p-8">
-        <div className="space-y-4">
-          <h3 className="text-4xl font-bold text-gray-900">{name}</h3>
-          {description && (
-            <p className="text-xl text-gray-600">
-              {description}
-            </p>
-          )}
-          <button
-            onClick={() => setShowWaitlist(true)}
-            className="text-xl font-medium text-teal-600 hover:text-teal-700 transition-colors duration-200"
-          >
-            Join Waitlist
-          </button>
-        </div>
       </div>
 
       {showWaitlist && (
