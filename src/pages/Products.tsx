@@ -45,20 +45,27 @@ export default function Products() {
   };
 
   return (
-    <div className="container mx-auto px-4">
-      <h1 className="text-3xl font-bold text-gray-900 mb-8">Our Products</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {products.map((product) => (
-          <ProductCard
-            key={product.id}
-            id={product.id}
-            name={product.name}
-            description={product.description}
-            price={product.price}
-            image={product.image_url || 'https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=800'}
-            isService={product.is_service}
-          />
-        ))}
+    <div className="w-full">
+      {/* Categories */}
+      
+
+      {/* Products Grid */}
+      <div className="w-full py-8">
+        <div className="w-full px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {products.map((product) => (
+              <ProductCard
+                key={product.id}
+                id={product.id}
+                name={product.name}
+                description={product.description}
+                price={product.price}
+                image={product.image_url || 'https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=800'}
+                isService={product.is_service}
+              />
+            ))}
+          </div>
+        </div>
       </div>
       
       <div className="mt-16 text-center text-gray-600 text-sm">
