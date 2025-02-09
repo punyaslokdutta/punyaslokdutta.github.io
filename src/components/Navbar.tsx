@@ -36,7 +36,7 @@ export default function Navbar({ onChatOpen }: NavbarProps) {
           </button>
 
           {/* Cart Icon */}
-          <Link
+          {/* <Link
             to="/cart"
             className="p-2 hover:bg-gray-100 rounded-full relative"
           >
@@ -46,7 +46,7 @@ export default function Navbar({ onChatOpen }: NavbarProps) {
                 {cartCount}
               </span>
             )}
-          </Link>
+          </Link> */}
         </div>
       </div>
     </nav>

@@ -67,11 +67,6 @@ export default function Products() {
           </div>
         </div>
       </div>
-      
-      <div className="mt-16 text-center text-gray-600 text-sm">
-        <div>Manufactured By: Kraft Island</div>
-        <div>FSSAI License No: XXXXXXXXXX</div>
-      </div>
     </div>
   );
 }
