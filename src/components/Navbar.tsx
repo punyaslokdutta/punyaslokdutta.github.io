@@ -44,7 +44,7 @@ export default function Navbar({ onChatOpen }: NavbarProps) {
   return (
     <div className="bg-white">
       {/* Top bar */}
-      <div className="border-b">
+      {/* <div className="border-b">
         <div className="container mx-auto px-2">
           <div className="flex justify-end items-center h-8 space-x-8 text-sm">
             <Link to="/sustainability" className="hover:underline font-aboreto">
@@ -58,7 +58,7 @@ export default function Navbar({ onChatOpen }: NavbarProps) {
             </Link>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Main navbar */}
       <div className="container mx-auto px-4 py-4">
@@ -97,7 +97,7 @@ export default function Navbar({ onChatOpen }: NavbarProps) {
           </button>
 
           {/* Right side icons */}
-          <div className="flex items-center space-x-6">
+          {/* <div className="flex items-center space-x-6">
             <div className="flex flex-col items-center">
               {user ? (
                 <Link to="/profile" className="text-center group">
@@ -138,11 +138,11 @@ export default function Navbar({ onChatOpen }: NavbarProps) {
               )}
               <span className="text-xs mt-1 font-aboreto">Shopping bag ({itemCount})</span>
             </Link>
-          </div>
+          </div> */}
         </div>
 
         {/* Categories */}
-        <div className="flex justify-center space-x-8 mt-6 font-aboreto text-sm">
+        {/* <div className="flex justify-center space-x-8 mt-6 font-aboreto text-sm">
           <Link to="/category/food" className="hover:underline">Supplements</Link>
           <Link to="/category/chews" className="hover:underline">Chews</Link>
           <Link to="/category/accessories" className="hover:underline">Accessories</Link>
@@ -151,7 +151,7 @@ export default function Navbar({ onChatOpen }: NavbarProps) {
               Admin
             </Link>
           )}
-        </div>
+        </div> */}
       </div>
     </div>
   );
