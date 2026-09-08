@@ -1,278 +1,389 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>e-commerce website</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Punyaslok Dutta's product engineering and multi-agent workflow." />
+    <meta name="theme-color" content="#efede5" />
+    <title>Punyaslok Dutta — Product Engineer & Agent Operator</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- font-awesome cdn link -->
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="Punyaslok Dutta, home">
+        <span class="brand-mark">PD</span>
+        <span class="brand-copy">Product systems<br />for the agent era</span>
+      </a>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="#workflow">Workflow</a>
+        <a href="#control">Control room</a>
+        <a href="#stack">Stack</a>
+        <a href="#principles">Principles</a>
+      </nav>
+      <a class="header-cta" href="mailto:punyaslok@settlx.xyz">Start a conversation <span>↗</span></a>
+      <button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false" data-menu-button>
+        <span></span><span></span>
+      </button>
+      <nav class="mobile-nav" aria-label="Mobile navigation" data-mobile-nav>
+        <a href="#workflow">Workflow</a>
+        <a href="#control">Control room</a>
+        <a href="#stack">Stack</a>
+        <a href="#principles">Principles</a>
+        <a href="mailto:punyaslok@settlx.xyz">Email me ↗</a>
+      </nav>
+    </header>
 
-    <!-- custom css file link -->
-    <link rel="stylesheet" href="style.css">
+    <main id="main">
+      <section class="hero section-pad" id="top">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span class="signal-dot"></span> Punyaslok Dutta · Product engineer / agent operator</p>
+          <h1>I turn customer mess into <em>shipped product.</em></h1>
+          <p class="hero-lede">
+            I stay on the problem, taste and tradeoffs. Agents fan out across research, architecture,
+            implementation and QA—then evidence converges before I ship.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-dark" href="#workflow">Enter the workflow <span>↓</span></a>
+            <a class="text-link" href="#video">Watch the 60-sec version <span>↗</span></a>
+          </div>
+          <div class="hero-note">
+            <span>Operating belief</span>
+            <p>Parallelize discovery. Serialize decisions. Keep the customer in the loop.</p>
+          </div>
+        </div>
 
-</head>
-<body>
-    
-    <section id="header">
-        <a href="#"><img src="images/logo2.png" class="logo" alt="" width="100px" height="100px"></a>
-        <div>
-            <ul id="navbar">
-                <li><a class="active" href="index.html">Home</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li id="lg-bag"><a href="cart.html"><i class="far fa-shopping-bag"></i></a></li>
-                <a href="#" id="close"><i class="far fa-times"></i></a>
-            </ul>
-        </div>
-        <div id="mobile">
-            <a href="cart.html"><i class="far fa-shopping-bag"></i></a>
-            <i id="bar" class="fas fa-outdent"></i>
-        </div>
-    </section>
-
-    <section id="hero">
-        <h4>Trade-in-offer</h4>
-        <h2>Super value deals</h2>
-        <h1>On all products</h1>
-        <p>Save more with coupons & up to 70% off!</p>
-        <button>Shop Now</button>
-    </section>
-
-    <section id="feature" class="section-p1">
-        <div class="fe-box">
-            <img src="images/features/f1.png" alt="">
-            <h6>Free Shipping</h6>
-        </div>
-        <div class="fe-box">
-            <img src="images/features/f2.png" alt="">
-            <h6>Online Order</h6>
-        </div>
-        <div class="fe-box">
-            <img src="images/features/f3.png" alt="">
-            <h6>Save Money</h6>
-        </div>
-        <div class="fe-box">
-            <img src="images/features/f4.png" alt="">
-            <h6>Promotions</h6>
-        </div>
-        <div class="fe-box">
-            <img src="images/features/f5.png" alt="">
-            <h6>Happy Sell</h6>
-        </div>
-        <div class="fe-box">
-            <img src="images/features/f6.png" alt="">
-            <h6>F24/7 Support</h6>
-        </div>
-    </section>
-
-    <section id="product1" class="section-p1">
-        <h2>Featured Products</h2>
-        <p>Summer Collection New Modern Design</p>
-        <div class="pro-container">
-            <div class="pro">
-                <img src="images/products/trimmer_baby.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Electric Nail Trimmer for babies</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>$78</h4>
-                </div>
-                <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
+        <div class="control-card reveal" data-delay="1" aria-label="Live agent control room illustration">
+          <div class="control-topline">
+            <div><span class="live-dot"></span> CONTROL ROOM</div>
+            <time data-ist-clock>--:-- IST</time>
+          </div>
+          <div class="control-brief">
+            <span>ACTIVE BRIEF</span>
+            <strong>Reduce onboarding drop-off without adding a new step.</strong>
+          </div>
+          <div class="agent-list">
+            <button class="agent-row active" type="button" data-agent="scout">
+              <span class="agent-index">01</span>
+              <span class="agent-name">Context scout</span>
+              <span class="agent-task">reading calls</span>
+              <span class="status status-run">RUN</span>
+            </button>
+            <button class="agent-row" type="button" data-agent="architect">
+              <span class="agent-index">02</span>
+              <span class="agent-name">Architect ×2</span>
+              <span class="agent-task">3 approaches</span>
+              <span class="status status-run">RUN</span>
+            </button>
+            <button class="agent-row" type="button" data-agent="builder">
+              <span class="agent-index">03</span>
+              <span class="agent-name">Builder A / B</span>
+              <span class="agent-task">isolated trees</span>
+              <span class="status status-work">WORK</span>
+            </button>
+            <button class="agent-row" type="button" data-agent="reviewer">
+              <span class="agent-index">04</span>
+              <span class="agent-name">Review + QA</span>
+              <span class="agent-task">awaiting diff</span>
+              <span class="status status-wait">WAIT</span>
+            </button>
+          </div>
+          <div class="agent-detail" aria-live="polite">
+            <div>
+              <span data-agent-label>CONTEXT SCOUT</span>
+              <p data-agent-copy>Turns call notes, support threads and product telemetry into a one-page evidence brief.</p>
             </div>
-            <div class="pro">
-                <img src="images/products/trimmer_baby2.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Electric Nail Trimmer for babies</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>$78</h4>
-                </div>
-                <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
-            </div>
-            <div class="pro">
-                <img src="images/products/spatula.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Handmade wooden spatula set</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>$78</h4>
-                </div>
-                <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
-            </div>
-            <div class="pro">
-                <img src="images/products/f4.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Cartoon Astronaut T-Shirts</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>$78</h4>
-                </div>
-                <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
-            </div>
-            <div class="pro">
-                <img src="images/products/f5.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Electric Nail Trimmer for babies</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>$78</h4>
-                </div>
-                <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
-            </div>
-            <div class="pro">
-                <img src="images/products/f6.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Cartoon Astronaut T-Shirts</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>$78</h4>
-                </div>
-                <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
-            </div>
-            <div class="pro">
-                <img src="images/products/f7.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Electric Nail Trimmer for babies</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>$78</h4>
-                </div>
-                <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
-            </div>
-            <div class="pro">
-                <img src="images/products/f8.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Cartoon Astronaut T-Shirts</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>$78</h4>
-                </div>
-                <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
-            </div>
+            <div class="artifact-pill" data-agent-artifact>evidence.md</div>
+          </div>
+          <div class="control-footer">
+            <div><strong>05</strong><span>sessions</span></div>
+            <div><strong>03</strong><span>worktrees</span></div>
+            <div><strong>01</strong><span>ship decision</span></div>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <section id="banner" class="section-m1">
-        <h4>Repair Services</h4>
-        <h2>Up to <span>70% Off</span> - All Products & Accessories</h2>
-        <button class="normal">Explore More</button>
-    </section>
-
-
-
-    <section id="newsletter" class="section-p1 section-m1">
-        <div class="newstext">
-            <h4>Sign Up For Newsletter</h4>
-            <p>Get E-mail updates about our latest shop and <span>special offers.</span></p>
+      <section class="marquee" aria-label="Core workflow">
+        <div class="marquee-track">
+          <span>LISTEN</span><i>✳</i><span>FRAME</span><i>✳</i><span>DIVERGE</span><i>✳</i><span>BUILD</span><i>✳</i><span>PROVE</span><i>✳</i><span>SHIP</span><i>✳</i><span>LEARN</span><i>✳</i>
+          <span aria-hidden="true">LISTEN</span><i aria-hidden="true">✳</i><span aria-hidden="true">FRAME</span><i aria-hidden="true">✳</i><span aria-hidden="true">DIVERGE</span><i aria-hidden="true">✳</i><span aria-hidden="true">BUILD</span><i aria-hidden="true">✳</i><span aria-hidden="true">PROVE</span><i aria-hidden="true">✳</i><span aria-hidden="true">SHIP</span><i aria-hidden="true">✳</i><span aria-hidden="true">LEARN</span><i aria-hidden="true">✳</i>
         </div>
-        <div class="form">
-            <input type="text" placeholder="Your email address">
-            <button class="normal">Sign Up</button>
-        </div>
-    </section>
+      </section>
 
-    <footer class="section-p1">
-        <div class="col">
-            <img class="logo" src="images/logo2.png" alt="" width="100px" height="100px">
-            <h4>Contact</h4>
-            <p><strong>Address:</strong> Bangalore - 560068</p>
-            <p><strong>Phone:</strong> +91-9686984930</p>
-            <p><strong>Hours:</strong> 10:00 - 18:00, Mon - Sat</p>
-            <div class="follow">
-                <h4>Follow us</h4>
-                <div class="icon">
-                    <i class="fab fa-facebook-f"></i>
-                    <i class="fab fa-twitter"></i>
-                    <i class="fab fa-instagram"></i>
-                    <i class="fab fa-pinterest-p"></i>
-                    <i class="fab fa-youtube"></i>
-                </div>
+      <section class="workflow section-pad" id="workflow">
+        <div class="section-heading reveal">
+          <p class="section-kicker">01 / The product loop</p>
+          <h2>The job is not writing more code. It is making <em>better decisions, faster.</em></h2>
+          <p>Every phase leaves an artifact. That is how parallel work stays legible.</p>
+        </div>
+
+        <div class="workflow-layout">
+          <div class="workflow-steps reveal" role="tablist" aria-label="Product workflow phases">
+            <button class="workflow-step active" type="button" role="tab" aria-selected="true" data-step="listen">
+              <span>01</span><strong>Listen</strong><small>Calls, support, telemetry</small>
+            </button>
+            <button class="workflow-step" type="button" role="tab" aria-selected="false" data-step="frame">
+              <span>02</span><strong>Frame</strong><small>Problem + acceptance criteria</small>
+            </button>
+            <button class="workflow-step" type="button" role="tab" aria-selected="false" data-step="diverge">
+              <span>03</span><strong>Diverge</strong><small>Competing approaches</small>
+            </button>
+            <button class="workflow-step" type="button" role="tab" aria-selected="false" data-step="build">
+              <span>04</span><strong>Build</strong><small>Isolated worktrees</small>
+            </button>
+            <button class="workflow-step" type="button" role="tab" aria-selected="false" data-step="prove">
+              <span>05</span><strong>Prove</strong><small>Tests, review, browser QA</small>
+            </button>
+            <button class="workflow-step" type="button" role="tab" aria-selected="false" data-step="ship">
+              <span>06</span><strong>Ship + learn</strong><small>Release, watch, codify</small>
+            </button>
+          </div>
+
+          <article class="workflow-panel reveal" data-delay="1">
+            <div class="panel-number" data-step-number>01</div>
+            <div class="panel-content">
+              <p class="mono-label" data-step-kicker>CUSTOMER SIGNAL → EVIDENCE</p>
+              <h3 data-step-title>Start with what happened, not what was requested.</h3>
+              <p data-step-copy>I review the call, pull the exact friction, and separate the user’s proposed solution from the job they need done.</p>
+              <dl>
+                <div><dt>Human owns</dt><dd data-step-human>Curiosity, follow-ups, product judgment</dd></div>
+                <div><dt>Agent owns</dt><dd data-step-agent>Transcription synthesis, pattern scan, open questions</dd></div>
+                <div><dt>Exit artifact</dt><dd><code data-step-artifact>evidence.md</code></dd></div>
+              </dl>
             </div>
-        </div>
-        <div class="col">
-            <h4>About</h4>
-            <a href="#">About us</a>
-            <a href="#">Delivery Information</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms & Conditions</a>
-            <a href="#">Contact Us</a>
-        </div>
-        <div class="col">
-            <h4>My Account</h4>
-            <a href="#">Sign In</a>
-            <a href="#">View Cart</a>
-            <a href="#">My Wishlist</a>
-            <a href="#">Track My Order</a>
-            <a href="#">Help</a>
-        </div>
-        <div class="col install">
-            <h4>Install App</h4>
-            <p>From App Store or Google Play</p>
-            <div class="row">
-                <img src="images/pay/app.jpg" alt="">
-                <img src="images/pay/play.jpg" alt="">
+            <div class="panel-route" aria-hidden="true">
+              <span class="route-node active">USER</span><i></i><span class="route-node">SIGNAL</span><i></i><span class="route-node">BRIEF</span>
             </div>
-            <p>Secured Payment Gateway</p>
-            <img src="images/pay/pay.png" alt="">
+          </article>
         </div>
-        <div class="copyright">
-            <p>Created By Woody Island Enterprise | All Rights Reserved | &#169; 2023</p>
+      </section>
+
+      <section class="control-section section-pad dark-section" id="control">
+        <div class="section-heading reveal">
+          <p class="section-kicker">02 / The control room</p>
+          <h2>Many sessions.<br /><em>One source of truth.</em></h2>
+          <p>I use agents as a portfolio of bounded bets—not one endlessly growing chat.</p>
         </div>
+
+        <div class="pipeline reveal" aria-label="Agent session pipeline">
+          <div class="pipeline-column accent-column">
+            <div class="pipeline-title"><span>00</span> Intake</div>
+            <div class="pipeline-card white-card"><small>SIGNAL</small><strong>“I keep abandoning setup.”</strong><span>Granola · support · analytics</span></div>
+          </div>
+          <div class="pipeline-arrow" aria-hidden="true">→</div>
+          <div class="pipeline-column">
+            <div class="pipeline-title"><span>01</span> Discover</div>
+            <div class="pipeline-card"><small>SCOUT A</small><strong>Map the current flow</strong><span>read-only</span></div>
+            <div class="pipeline-card"><small>SCOUT B</small><strong>Find prior patterns</strong><span>read-only</span></div>
+          </div>
+          <div class="pipeline-arrow" aria-hidden="true">→</div>
+          <div class="pipeline-column">
+            <div class="pipeline-title"><span>02</span> Build</div>
+            <div class="pipeline-card"><small>TREE A</small><strong>Smallest path</strong><span>feature/a</span></div>
+            <div class="pipeline-card"><small>TREE B</small><strong>Robust path</strong><span>feature/b</span></div>
+          </div>
+          <div class="pipeline-arrow" aria-hidden="true">→</div>
+          <div class="pipeline-column">
+            <div class="pipeline-title"><span>03</span> Prove</div>
+            <div class="pipeline-card"><small>REVIEWER</small><strong>Diff against brief</strong><span>review.md</span></div>
+            <div class="pipeline-card"><small>QA</small><strong>Try to break it</strong><span>test.log</span></div>
+          </div>
+          <div class="pipeline-arrow" aria-hidden="true">→</div>
+          <div class="pipeline-column decision-column">
+            <div class="pipeline-title"><span>04</span> Decide</div>
+            <div class="pipeline-card decision-card"><small>HUMAN GATE</small><strong>Ship, revise or kill</strong><span>decision.md</span></div>
+          </div>
+        </div>
+
+        <div class="operating-laws">
+          <article class="law reveal"><span>01</span><h3>One outcome per session</h3><p>A thread gets a finish line, constraints and a clear return format.</p></article>
+          <article class="law reveal" data-delay="1"><span>02</span><h3>Context packs, not context dumps</h3><p>Each role sees only the brief, files and decisions it needs.</p></article>
+          <article class="law reveal" data-delay="2"><span>03</span><h3>Branches do not talk. Outputs do.</h3><p>Agents work independently; structured artifacts make their work comparable.</p></article>
+          <article class="law reveal" data-delay="3"><span>04</span><h3>Merge through evidence</h3><p>Tests, screenshots, traces and requirements—not confidence—win the decision.</p></article>
+        </div>
+      </section>
+
+      <section class="allocation section-pad">
+        <div class="allocation-copy reveal">
+          <p class="section-kicker">03 / Attention allocation</p>
+          <h2>Product and development are the work. GTM closes the loop.</h2>
+          <p>
+            I keep distribution intentionally small and high-signal: find the right customer, start a useful conversation,
+            and route what I learn back into the product.
+          </p>
+        </div>
+        <div class="allocation-visual reveal" data-delay="1">
+          <div class="allocation-bar" aria-label="92 percent product and development, 8 percent go to market">
+            <div class="product-bar"><strong>92%</strong><span>Product + development</span></div>
+            <div class="gtm-bar"><strong>8%</strong><span>GTM</span></div>
+          </div>
+          <div class="allocation-details">
+            <div><span>PRODUCT / DEV</span><p>Customer problem · prototyping · architecture · coding · review · QA · release</p></div>
+            <div><span>GTM</span><p>ICP research · personal outreach · customer calls · X / LinkedIn notes</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="stack section-pad" id="stack">
+        <div class="section-heading reveal">
+          <p class="section-kicker">04 / The tool bench</p>
+          <h2>A small core.<br /><em>A deliberate bench.</em></h2>
+          <p>Tools are hired for a job. Saved repos are research, not automatically the stack.</p>
+        </div>
+
+        <div class="filter-row reveal" aria-label="Filter tools">
+          <button class="filter-chip active" type="button" data-filter="all">All</button>
+          <button class="filter-chip" type="button" data-filter="signal">Signal</button>
+          <button class="filter-chip" type="button" data-filter="build">Build</button>
+          <button class="filter-chip" type="button" data-filter="proof">Proof</button>
+          <button class="filter-chip" type="button" data-filter="gtm">GTM</button>
+        </div>
+
+        <div class="tool-grid">
+          <article class="tool-card reveal" data-category="signal">
+            <div class="tool-state core">CORE</div><h3>Granola</h3><p>Customer calls become evidence, requirements and reusable language.</p><span>LISTEN / SYNTHESIZE</span>
+          </article>
+          <article class="tool-card reveal" data-delay="1" data-category="signal">
+            <div class="tool-state bench">BENCH</div><h3>Screenpipe</h3><p>Local computer history as recallable context for long-running work.</p><span>MEMORY / CONTEXT</span>
+          </article>
+          <article class="tool-card reveal" data-delay="2" data-category="signal">
+            <div class="tool-state bench">BENCH</div><h3>Agent-Reach</h3><p>Research across the public web and social surfaces from one agent path.</p><span>RESEARCH / SIGNAL</span>
+          </article>
+          <article class="tool-card reveal" data-category="build">
+            <div class="tool-state core">CORE</div><h3>Cursor + coding agents</h3><p>Fast local edits plus autonomous branches for bounded implementation work.</p><span>CODE / ITERATE</span>
+          </article>
+          <article class="tool-card reveal" data-delay="1" data-category="build">
+            <div class="tool-state core">PATTERN</div><h3>Git worktrees</h3><p>Isolation for parallel builders without corrupting the shared working state.</p><span>BRANCH / CONVERGE</span>
+          </article>
+          <article class="tool-card reveal" data-delay="2" data-category="build">
+            <div class="tool-state bench">BENCH</div><h3>qm · Tessera · Orca</h3><p>Different control surfaces for multiplayer work, session organization and fleets.</p><span>ORCHESTRATE / WATCH</span>
+          </article>
+          <article class="tool-card reveal" data-category="proof">
+            <div class="tool-state core">CORE</div><h3>Tests + browser QA</h3><p>Executable acceptance criteria, real flows and screenshots before merge.</p><span>VERIFY / SHIP</span>
+          </article>
+          <article class="tool-card reveal" data-delay="1" data-category="proof">
+            <div class="tool-state bench">BENCH</div><h3>OpenInference</h3><p>Traces that show where an agent spent time, tokens and judgment.</p><span>OBSERVE / DEBUG</span>
+          </article>
+          <article class="tool-card reveal" data-delay="2" data-category="proof">
+            <div class="tool-state bench">BENCH</div><h3>SkillSpector</h3><p>Security review for the capability packages that enter the system.</p><span>SCAN / TRUST</span>
+          </article>
+          <article class="tool-card reveal" data-category="gtm">
+            <div class="tool-state core">GTM</div><h3>Clay</h3><p>Build a small, qualified list around a real problem and a crisp ICP.</p><span>FIND / ENRICH</span>
+          </article>
+          <article class="tool-card reveal" data-delay="1" data-category="gtm">
+            <div class="tool-state core">GTM</div><h3>AgentMail + Mailometer</h3><p>Personal outreach infrastructure with deliverability kept visible.</p><span>REACH / MEASURE</span>
+          </article>
+          <article class="tool-card reveal" data-delay="2" data-category="gtm">
+            <div class="tool-state core">GTM</div><h3>Granola → X / LinkedIn</h3><p>Distill real customer language into an opinionated note, then shape it for each platform.</p><span>LEARN / TEACH</span>
+          </article>
+        </div>
+
+        <div class="star-signal reveal">
+          <div class="star-count"><strong>284</strong><span>public GitHub stars reviewed</span></div>
+          <div class="star-story">
+            <p>Your saved work tells a useful story:</p>
+            <div class="story-track">
+              <span>INTERFACES<small>React Native · audio · search</small></span><i>→</i>
+              <span>INTELLIGENCE<small>ML · vision · generative systems</small></span><i>→</i>
+              <span>LEVERAGE<small>agents · skills · harnesses</small></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="principles section-pad dark-section" id="principles">
+        <div class="section-heading reveal">
+          <p class="section-kicker">05 / Design principles</p>
+          <h2>The system gets faster.<br /><em>The bar stays human.</em></h2>
+        </div>
+        <div class="principle-list">
+          <article class="principle reveal"><span>01</span><h3>Thin harness.<br />Fat skills.</h3><p>Keep orchestration boring. Put method, judgment, examples and failure modes into reusable skills.</p></article>
+          <article class="principle reveal"><span>02</span><h3>Deterministic floor.<br />Probabilistic ceiling.</h3><p>APIs, scripts and tests handle certainty. Models interpret, compare and decide where judgment matters.</p></article>
+          <article class="principle reveal"><span>03</span><h3>Disagreement<br />before code.</h3><p>Two independent approaches are cheap before implementation and expensive after it.</p></article>
+          <article class="principle reveal"><span>04</span><h3>Proof over<br />performance.</h3><p>A confident agent is not evidence. A passing flow, a trace and a clean diff are.</p></article>
+          <article class="principle reveal"><span>05</span><h3>Context is<br />a budget.</h3><p>Load the right brief, decisions and files—not the entire history of the company.</p></article>
+          <article class="principle reveal"><span>06</span><h3>Customer signal<br />should compound.</h3><p>Every useful call improves the product, its examples, its skills and the next conversation.</p></article>
+        </div>
+
+        <div class="human-line reveal">
+          <p>I do not delegate</p>
+          <div><span>Problem definition</span><span>Taste</span><span>Tradeoffs</span><span>Customer trust</span><span>Final ship call</span></div>
+        </div>
+      </section>
+
+      <section class="skills section-pad">
+        <div class="skills-intro reveal">
+          <p class="section-kicker">06 / Skills worth compounding</p>
+          <h2>My real stack is a set of reusable ways of working.</h2>
+        </div>
+        <ol class="skills-list reveal" data-delay="1">
+          <li><span>01</span><strong>Customer-call synthesis</strong><small>signal → evidence brief</small></li>
+          <li><span>02</span><strong>Repository mapping</strong><small>codebase → terrain map</small></li>
+          <li><span>03</span><strong>Architecture divergence</strong><small>constraints → options</small></li>
+          <li><span>04</span><strong>Implementation contract</strong><small>brief → bounded task</small></li>
+          <li><span>05</span><strong>Adversarial code review</strong><small>diff → ranked risk</small></li>
+          <li><span>06</span><strong>Release proof</strong><small>criteria → receipts</small></li>
+          <li><span>07</span><strong>Learning capture</strong><small>incident → stronger skill</small></li>
+          <li><span>08</span><strong>Product story distillation</strong><small>truth → demo / post</small></li>
+        </ol>
+      </section>
+
+      <section class="video-section section-pad" id="video">
+        <div class="video-copy reveal">
+          <p class="section-kicker">07 / The 60-second story</p>
+          <h2>Show the operating system, not another talking head.</h2>
+          <p>A sales video should move from customer signal to shipped proof in under a minute.</p>
+          <button class="button button-dark" type="button" data-copy-script>Copy the script <span data-copy-label>↗</span></button>
+        </div>
+        <div class="video-board reveal" data-delay="1">
+          <div class="video-screen">
+            <div class="video-chrome"><span></span><span></span><span></span><small>workflow-film_v01</small></div>
+            <div class="frame-stack">
+              <div class="frame-card frame-call"><small>00:06 · SIGNAL</small><strong>“I keep abandoning setup.”</strong></div>
+              <div class="frame-card frame-agents"><small>00:18 · DIVERGE</small><strong>3 agents<br />2 approaches<br />1 brief</strong></div>
+              <div class="frame-card frame-proof"><small>00:42 · PROOF</small><strong>8/8 flows passed</strong></div>
+            </div>
+            <div class="caption-line">I use AI to compress the whole product loop—not just type faster.</div>
+          </div>
+          <div class="timeline">
+            <div class="timeline-time"><span>00:00</span><span>00:60</span></div>
+            <div class="timeline-track"><i class="clip clip-a"></i><i class="clip clip-b"></i><i class="clip clip-c"></i><b></b></div>
+            <div class="timeline-labels"><span>Problem</span><span>System</span><span>Proof</span><span>Invite</span></div>
+          </div>
+        </div>
+        <textarea class="visually-hidden" data-script-source readonly>Most teams use AI to type faster. I use it to compress the entire product loop.
+
+It starts with a real customer signal. I turn the call, support thread and telemetry into a one-page evidence brief.
+
+Then specialized agents work in parallel: scouts map the system, architects disagree on the approach, and builders implement bounded options in isolated worktrees.
+
+Nothing ships because an agent sounds confident. A separate reviewer checks the diff against the brief. QA runs the real flow. Tests, traces and screenshots become the proof.
+
+I make the final product call, ship the smallest strong version, and turn what we learned into a reusable skill.
+
+Less busywork. Better decisions. Faster product learning. If that is how you want to build, let’s talk.</textarea>
+      </section>
+
+      <section class="contact section-pad">
+        <p class="section-kicker">08 / Build together</p>
+        <h2 class="reveal">Have a hard product problem<br />and <em>too many tabs?</em></h2>
+        <div class="contact-row reveal" data-delay="1">
+          <a href="mailto:punyaslok@settlx.xyz">punyaslok@settlx.xyz <span>↗</span></a>
+          <p>Tell me the customer, the constraint and what “working” needs to mean.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div><strong>PD</strong><span>Punyaslok Dutta · Settl X</span></div>
+      <div class="footer-links">
+        <a href="https://github.com/punyaslokdutta" target="_blank" rel="noreferrer">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/punyaslok-dutta-a054a2a6/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+        <a href="#top">Back to top ↑</a>
+      </div>
+      <small>Product systems for the agent era · <span data-year></span></small>
     </footer>
-
-    <!-- javascript script file link -->
-    <script src="script.js"></script>
-</body>
+  </body>
 </html>
