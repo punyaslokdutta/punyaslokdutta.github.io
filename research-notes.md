@@ -59,3 +59,24 @@ Customer-call synthesis, repository mapping, architecture divergence, implementa
 ## Content and GTM loop
 
 Use Granola twice: first as product evidence, then as the source for content. One strong call can produce an internal insight note, a concise X post, a more reflective LinkedIn post, and the opening line for a product demo. The public content should teach what the product work revealed; it should not become a separate content factory.
+
+## Visual system: Orbital Ledger
+
+The portfolio uses a single design direction rather than combining unrelated AI-site trends. **Orbital Ledger** pairs Settl X's calm, low-contrast product surfaces with retro aerospace instrumentation: mineral grey-green, deep green-black, a phosphor signal color, one warm human accent, modern grotesk display type, and mono operational labels.
+
+### References used
+
+- [Settl X](https://www.settlx.xyz/) — soft raised surfaces, muted jade, low-friction professional tone, and product UI as the hero proof.
+- [SaaSV2 on Framer](https://www.framer.com/marketplace/templates/saasv2/) — dark technical surfaces, warm conversion accents, structured data visuals, and editorial hierarchy.
+- [Platform on Framer](https://www.framer.com/marketplace/templates/platform/) — modular editorial composition where every section earns its place.
+- [Marvin on Framer](https://www.framer.com/marketplace/templates/marvin/) — retro character held inside a clean, modern portfolio structure.
+- [Trading Space on Behance](https://www.behance.net/gallery/221601737/Trading-Space-Web-Design) — retro-future atmosphere created through dark technical UI and small nostalgic details rather than excessive neon.
+
+### Rules that keep it from looking AI-generated
+
+1. Use one palette across the whole site: mineral surface, ink, muted jade, phosphor, and copper.
+2. Reserve soft depth for interactive or structurally important surfaces; do not put every sentence in a floating card.
+3. Use large type for hierarchy, not decoration. Body copy remains compact and readable.
+4. Keep real product evidence, constraints, artifacts, dates, and metrics visible. Specificity is the strongest antidote to generic presentation.
+5. Motion explains state or focus. Avoid ambient blobs, random icon clouds, and perpetual gradient animation.
+6. Use the retro language in micro-details—mono labels, status lights, routes, indexing—not novelty illustrations.
